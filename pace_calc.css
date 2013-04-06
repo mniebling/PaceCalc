@@ -1,0 +1,98 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	font-family: "Optima", "Times New Roman", Times, serif;
+}
+
+body {
+	margin: 0;
+}
+
+/* STUFF IN THE TOP */
+.top-bar {
+	width: 100%;
+	border-bottom: 5px groove #FFC;
+	background-color: #666;
+	padding: 20px 0;
+}
+
+.top-contents {
+	margin: 0 auto;
+	width: 400px;
+}
+
+h1 {
+	color: #FC0;
+	font-weight: 500;
+	font-size: 40px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: -1.25px;
+	margin-bottom: 4px;
+	margin-top: 0;
+}
+
+#input-time {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	padding-left: 2px;
+	border: medium solid #999;
+	background-color: #ffd;
+	height: 40px;
+}
+
+.hint {
+	font-size: 14px;
+	color: #aaa;
+}
+
+.for {
+	font-size: 24px;
+	color: #FC6;
+	letter-spacing: -1.25px;
+	margin-top: 20px;
+}
+
+#dd-distance {
+	font-size: 18px;
+	border: thin solid #999;
+	background-color: #ffd;
+	vertical-align: middle;
+}
+
+#do-it {
+	height: 28px;
+	font-size: 15px;
+	vertical-align: middle;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+
+
+
+
+
+/* RESULTS AREA BELOW */
+.results {
+	margin: 0 auto;
+	width: 400px;
+	padding: 40px 0 0 0;
+}
+
+.output-row {
+	display: none;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.outputDistance {
+	display: inline-block;
+	width: 190px;
+	padding-right: 15px;
+	color: #666;
+}
+
+.outputTime {
+	display: inline-block;
+	width: 80px;
+}
