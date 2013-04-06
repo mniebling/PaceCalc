@@ -5,8 +5,8 @@ function formatSecondsToTime( seconds ) {
 	
 	// parse out hours, mins, secs
 	var hours = Math.floor(seconds / 3600);
-	var mins = 	Math.floor(seconds / 60) - (hours * 60);
-	var secs = 	Math.floor(seconds - (hours * 3600) - (mins * 60));
+	var mins = Math.floor(seconds / 60) - (hours * 60);
+	var secs = Math.floor(seconds - (hours * 3600) - (mins * 60));
 	
 	// add leading zeroes
 	mins = (mins < 10 && hours > 0) ? "0" + mins : mins;
@@ -56,23 +56,22 @@ function calculateAndRender() {
 	var metersPerSecond = distance / time;
 		
 	// output the values
-	$("#400").text(		calcTimeForDistance(400, metersPerSecond));
-	$("#800").text(		calcTimeForDistance(800, metersPerSecond));
-	$("#1600").text(	calcTimeForDistance(1600, metersPerSecond));
-	$("#3200").text(	calcTimeForDistance(3200, metersPerSecond));
-	$("#5000").text(	calcTimeForDistance(5000, metersPerSecond));
-	$("#5600").text(	calcTimeForDistance(5600, metersPerSecond));
-	$("#10000").text(	calcTimeForDistance(10000, metersPerSecond));
-	$("#21097").text(	calcTimeForDistance(21097, metersPerSecond));
-	$("#42195").text(	calcTimeForDistance(42195, metersPerSecond));
+	$("#400").text(calcTimeForDistance(400, metersPerSecond));
+	$("#800").text(calcTimeForDistance(800, metersPerSecond));
+	$("#1600").text(calcTimeForDistance(1600, metersPerSecond));
+	$("#3200").text(calcTimeForDistance(3200, metersPerSecond));
+	$("#5000").text(calcTimeForDistance(5000, metersPerSecond));
+	$("#5600").text(calcTimeForDistance(5600, metersPerSecond));
+	$("#10000").text(calcTimeForDistance(10000, metersPerSecond));
+	$("#21097").text(calcTimeForDistance(21097, metersPerSecond));
+	$("#42195").text(calcTimeForDistance(42195, metersPerSecond));
 }
-
 
 
 
 // jQuery for animation on rendered splits
 $(document).ready(function() {
-						   
+							 
 	// set focus in input control
 	$("#input-time").focus();
 	
@@ -80,7 +79,7 @@ $(document).ready(function() {
 
 	// bind function to "do it" button
 	$("#do-it").click(function() {
-							  
+								
 		calculateAndRender();
 
 		$(".output-row").each(function(index) {
@@ -93,7 +92,7 @@ $(document).ready(function() {
 
 	// bind function to handle "Enter" press in the text box
 	$("#input-time").keyup(function() { 
-								   
+									 
 		if(event.keyCode == 13) $("#do-it").click();
 	});
 });
