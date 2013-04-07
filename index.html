@@ -2,87 +2,83 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Mike's Pace Calculator</title>
+	<title>Mike's Pace Calculator</title>
 
-    <script src="jquery-1.7.1.min.js"></script>
-    <script src="pace_calc.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="pace_calc.js"></script>
 
-    <link href="pace_calc.css" rel="stylesheet" type="text/css" />
+	<link href="pace_calc.css" rel="stylesheet" type="text/css" />
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400' rel='stylesheet' type='text/css'>
+	<link href="//fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css">
 </head>
-
 
 <body>
 
 <div class="top-bar">
-    <div class="top-contents">
+	<div class="top-contents">
 
-        <h1>Enter your time:</h1>
-        <input id="input-time" size="11" />
-        <div class="hint">mm:ss or h:mm:ss please!</div>
-    
+		<form id="do-it" action="#" method="post">
+			<h1>Enter your time:</h1>
+			<input id="input-time" size="11" />
+			<div class="hint">mm:ss or h:mm:ss please!</div>
 
-        <div class="for">for</div>
-        
-        <select id="dd-distance">
-            <option value="400">400m (1/4 mi)</option>
-            <option value="800">800m (1/2 mi)</option>
-            <option value="1600" selected>1,600m (1 mi)</option>
-            <option value="3200">3,200m (2 mi)</option>
-            <option value="5000">5,000m (3.1 mi)</option>
-            <option value="5600">5,600m (3.5 mi)</option>
-            <option value="10000">10,000m (6.2 mi)</option>
-            <option value="21097">Half marathon (13.1 mi)</option>
-            <option value="42195">Marathon (26.2 mi)</option>
-        </select>
-        
-        <a href="#" id="do-it">Do It!</a>
+			<div class="for">for</div>
 
-    </div> <!-- .top-contents -->
+			<select id="dd-distance">
+				<option value="400">400m (1/4 mi)</option>
+				<option value="800">800m (1/2 mi)</option>
+				<option value="1600" selected>1,600m (1 mi)</option>
+				<option value="3200">3,200m (2 mi)</option>
+				<option value="5000">5,000m (3.1 mi)</option>
+				<option value="5600">5,600m (3.5 mi)</option>
+				<option value="10000">10,000m (6.2 mi)</option>
+				<option value="21097">Half marathon (13.1 mi)</option>
+				<option value="42195">Marathon (26.2 mi)</option>
+			</select>
+
+			<input type="submit" value="Do It!" />
+		</form>
+	</div> <!-- .top-contents -->
 </div> <!-- .top-bar -->
 
-
 <div class="results">
-    <div class="output-row">
-        <div class="outputTime" id="400"></div>
-        <div class="outputDistance">400m (0.25 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="800"></div>
-        <div class="outputDistance">800m (0.5 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="1600"></div>
-        <div class="outputDistance">1,600m (1 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="3200"></div>
-        <div class="outputDistance">3,200m (2 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="5000"></div>
-        <div class="outputDistance">5,000m (3.1 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="5600"></div>
-        <div class="outputDistance">5,600m (3.5 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="10000"></div>
-        <div class="outputDistance">10,000m (6.2 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="21097"></div>
-        <div class="outputDistance">Half marathon (13.1 mi)</div>
-    </div>
-    <div class="output-row">
-        <div class="outputTime" id="42195"></div>
-        <div class="outputDistance">Marathon (26.2 mi)</div>
-    </div>
+	<div class="output-row">
+		<div class="outputTime" id="d400"></div>
+		<div class="outputDistance">400m (0.25 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d800"></div>
+		<div class="outputDistance">800m (0.5 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d1600"></div>
+		<div class="outputDistance">1,600m (1 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d3200"></div>
+		<div class="outputDistance">3,200m (2 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d5000"></div>
+		<div class="outputDistance">5,000m (3.1 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d5600"></div>
+		<div class="outputDistance">5,600m (3.5 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d10000"></div>
+		<div class="outputDistance">10,000m (6.2 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d21097"></div>
+		<div class="outputDistance">Half marathon (13.1 mi)</div>
+	</div>
+	<div class="output-row">
+		<div class="outputTime" id="d42195"></div>
+		<div class="outputDistance">Marathon (26.2 mi)</div>
+	</div>
 </div>
-
 
 </body>
 </html>

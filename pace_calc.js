@@ -1,98 +1,80 @@
+(function ($) {
+	'use strict';
 
-// Given a number of seconds, 
-// return a properly formatted time string
-function formatSecondsToTime( seconds ) {
-	
-	// parse out hours, mins, secs
-	var hours = Math.floor(seconds / 3600);
-	var mins = Math.floor(seconds / 60) - (hours * 60);
-	var secs = Math.floor(seconds - (hours * 3600) - (mins * 60));
-	
-	// add leading zeroes
-	mins = (mins < 10 && hours > 0) ? "0" + mins : mins;
-	secs = (secs < 10) ? "0" + secs : secs;
+	// Given a number of seconds,
+	// return a properly formatted time string
+	function secondsToFormattedTime(seconds) {
 
-	// return formatted string
-	return((hours > 0) ? (hours + ":" + mins + ":" + secs) : (mins + ":" + secs));
-}
+		// parse out hours, mins, and secs
+		var hours = Math.floor(seconds / 3600),
+			mins = Math.floor(seconds / 60) % 60,
+			secs = Math.floor(seconds % 60);
 
+		// add leading zeroes
+		mins = (mins < 10 && hours > 0) ? '0' + mins : mins;
+		secs = (secs < 10) ? '0' + secs : secs;
 
-// Given distance in meters and rate in m/s, 
-// return time to traverse
-function calcTimeForDistance( distance, rate ) {
-	
-	return formatSecondsToTime(distance / rate);
-}
-
-
-// Grab the entered time from the text box
-// Parse and return as # of seconds
-function getSecondsFromTextBox() {
-
-	// get user's value and split into array
-	var timeArray = $("#input-time").val().split(":")
-	
-	// calculate number of seconds for each element
-	var seconds = 0;
-	var multiplier = 1;
-
-	for (var i = timeArray.length - 1; i >= 0; i--) {
-
-		seconds += multiplier * timeArray[i];
-		multiplier *= 60;
+		// return formatted string
+		return ((hours > 0) ? (hours + ':' + mins + ':' + secs) : (mins + ':' + secs));
 	}
-	
-	// return number of seconds
-	return seconds;
-}
 
 
+	// Given distance in meters and rate in m/s,
+	// return time to traverse
+	function calcTimeForDistance(distance, rate) {
 
-function calculateAndRender() {
-	
-	// do the math
-	var time = getSecondsFromTextBox();
-	var distance = $("#dd-distance").val();
-	var metersPerSecond = distance / time;
-		
-	// output the values
-	$("#400").text(calcTimeForDistance(400, metersPerSecond));
-	$("#800").text(calcTimeForDistance(800, metersPerSecond));
-	$("#1600").text(calcTimeForDistance(1600, metersPerSecond));
-	$("#3200").text(calcTimeForDistance(3200, metersPerSecond));
-	$("#5000").text(calcTimeForDistance(5000, metersPerSecond));
-	$("#5600").text(calcTimeForDistance(5600, metersPerSecond));
-	$("#10000").text(calcTimeForDistance(10000, metersPerSecond));
-	$("#21097").text(calcTimeForDistance(21097, metersPerSecond));
-	$("#42195").text(calcTimeForDistance(42195, metersPerSecond));
-}
+		return secondsToFormattedTime(distance / rate);
+	}
 
 
+	// Grab the entered time from the text box
+	// Parse and return as # of seconds
+	function formattedTimeToSeconds(time) {
 
-// jQuery for animation on rendered splits
-$(document).ready(function() {
-							 
+		// get user's value and split into array
+		var timeArray = time.split(':'),
+		// calculate number of seconds for each element
+			seconds = 0,
+			multiplier = 1,
+			current;
+
+		while ((current = timeArray.pop())) {
+			seconds += multiplier * current;
+			multiplier *= 60;
+		}
+
+		// return number of seconds
+		return seconds;
+	}
+
+
+	// jQuery for animation on rendered splits
+
 	// set focus in input control
-	$("#input-time").focus();
-	
+	$('#input-time').focus();
 
+	// bind function to "do it" form
+	$('#do-it').on('submit', function (event) {
 
-	// bind function to "do it" button
-	$("#do-it").click(function() {
-								
-		calculateAndRender();
+		// do the math
+		var time = formattedTimeToSeconds($('#input-time').val()),
+			distance = $('#dd-distance').val(),
+			metersPerSecond = distance / time;
 
-		$(".output-row").each(function(index) {
+		// output the values
+		$('#d400').text(calcTimeForDistance(400, metersPerSecond));
+		$('#d800').text(calcTimeForDistance(800, metersPerSecond));
+		$('#d1600').text(calcTimeForDistance(1600, metersPerSecond));
+		$('#d3200').text(calcTimeForDistance(3200, metersPerSecond));
+		$('#d5000').text(calcTimeForDistance(5000, metersPerSecond));
+		$('#d5600').text(calcTimeForDistance(5600, metersPerSecond));
+		$('#d10000').text(calcTimeForDistance(10000, metersPerSecond));
+		$('#d21097').text(calcTimeForDistance(21097, metersPerSecond));
+		$('#d42195').text(calcTimeForDistance(42195, metersPerSecond));
 
-			$(this).slideDown("slow");
-		});
+		$('.output-row').slideDown('slow');
+
+		event.preventDefault();
 	});
-	
 
-
-	// bind function to handle "Enter" press in the text box
-	$("#input-time").keyup(function() { 
-									 
-		if(event.keyCode == 13) $("#do-it").click();
-	});
-});
+}(window.jQuery, undefined));
