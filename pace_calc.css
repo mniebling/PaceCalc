@@ -1,5 +1,4 @@
-@charset "utf-8";
-/* CSS Document */
+﻿/* CSS Document */
 
 * {
 	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
@@ -53,7 +52,6 @@ h1 {
 	outline-color: #FC0;
 }
 
-
 .hint {
 	font-size: 14px;
 	color: #aaa;
@@ -66,8 +64,7 @@ h1 {
 	margin-top: 20px;
 }
 
-
-#do-it {
+input[type=submit] {
 	font-size: 15px;
 	padding: 6px 16px 8px 16px;
 
@@ -77,10 +74,6 @@ h1 {
 	text-decoration: none;
 	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
 }
-
-
-
-
 
 
 /* RESULTS AREA BELOW */
@@ -99,11 +92,12 @@ h1 {
 .outputDistance {
 	display: inline-block;
 	width: 190px;
-	padding-right: 15px;
+	padding-left: 15px;
 	color: #666;
 }
 
 .outputTime {
 	display: inline-block;
+	text-align: right;
 	width: 80px;
 }
