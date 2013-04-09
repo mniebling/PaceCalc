@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
-	<title>Mike's Pace Calculator</title>
+	<title>Race Pace Calculator</title>
 
 	<link href="pace_calc.css" rel="stylesheet" type="text/css" />
-	<link href="//fonts.googleapis.com/css?family=Raleway:400" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet" type="text/css">
 </head>
+
 
 <body>
 
@@ -15,15 +15,16 @@
 
 			<form id="do-it" action="#" method="post">
 				<h1>Enter your time:</h1>
-				<input id="input-time" size="11" />
+				<input id="input-time" size="10" />
 				<div class="hint">mm:ss or h:mm:ss please!</div>
 
-				<div class="for">for</div>
+				<h3 class="for">for</h3>
 
 				<select id="dd-distance">
 					<option value="400">400m (1/4 mi)</option>
 					<option value="800">800m (1/2 mi)</option>
-					<option value="1600" selected>1,600m (1 mi)</option>
+					<option value="1600" selected>1,600m (1 mi - track)</option>
+					<option value="1609">1,609m (1 mi - actual)</option>
 					<option value="3200">3,200m (2 mi)</option>
 					<option value="5000">5,000m (3.1 mi)</option>
 					<option value="5600">5,600m (3.5 mi)</option>
@@ -34,46 +35,72 @@
 
 				<input type="submit" value="Do It!" />
 			</form>
+
 		</div> <!-- .top-contents -->
 	</div> <!-- .top-bar -->
 
+
 	<div class="results">
-		<div class="output-row">
-			<div class="outputTime" id="d400"></div>
-			<div class="outputDistance">400m (0.25 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d800"></div>
-			<div class="outputDistance">800m (0.5 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d1600"></div>
-			<div class="outputDistance">1,600m (1 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d3200"></div>
-			<div class="outputDistance">3,200m (2 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d5000"></div>
-			<div class="outputDistance">5,000m (3.1 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d5600"></div>
-			<div class="outputDistance">5,600m (3.5 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d10000"></div>
-			<div class="outputDistance">10,000m (6.2 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d21097"></div>
-			<div class="outputDistance">Half marathon (13.1 mi)</div>
-		</div>
-		<div class="output-row">
-			<div class="outputTime" id="d42195"></div>
-			<div class="outputDistance">Marathon (26.2 mi)</div>
-		</div>
+		<table>
+			<tr>
+				<th class="output-time">Time</th>
+				<th class="output-distance">Distance</th>
+				<th>Miles</th>
+			</tr>
+			<tr class="output-row">
+				<td class="output-time" id="d400"></td>
+				<td class="output-distance">400m</td>
+				<td class="output-miles">0.25 mi</td>
+			</tr>
+			<tr class="output-row">
+				<td class="output-time" id="d800"></td>
+				<td class="output-distance">800m</td>
+				<td class="output-miles">0.5 mi</td>
+			</tr>
+			<tr class="output-row">
+				<td class="output-time" id="d1600"></td>
+				<td class="output-distance">1,600m</td>
+				<td class="output-miles">1 mi (track)</td>
+			</tr>
+			<tr class="output-row">
+				<td class="output-time" id="d1609"></td>
+				<td class="output-distance">1,609m</td>
+				<td class="output-miles">1 mi (actual)</td>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d3200"></td>
+				<td class="output-distance">3,200m</td>
+				<td class="output-miles">2 mi</td>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d5000"></td>
+				<td class="output-distance">5,000m</td>
+				<td class="output-miles">3.1 mi</td>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d5600"></td>
+				<td class="output-distance">5,600m</td>
+				<td class="output-miles">3.5 mi</td>
+			</tr>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d10000"></td>
+				<td class="output-distance">10,000m</td>
+				<td class="output-miles">6.2 mi</td>
+			</tr>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d21097"></td>
+				<td class="output-distance">Half marathon</td>
+				<td class="output-miles">13.1 mi</td>
+			</tr>
+			</tr>
+				<tr class="output-row">
+				<td class="output-time" id="d42195"></td>
+				<td class="output-distance">Marathon</td>
+				<td class="output-miles">26.2 mi</td>
+			</tr>
+		</table>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

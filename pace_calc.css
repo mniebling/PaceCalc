@@ -1,7 +1,6 @@
-﻿/* CSS Document */
-
+﻿/* GLOBAL STUFF */
 * {
-	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
+	font-family: "Noto Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
@@ -14,8 +13,10 @@ body {
 .top-bar {
 	width: 100%;
 	padding: 20px 0;
-	
 	background-color: #183543;
+
+	/* margin-bottom goes on the top bar because otherwise the table jumps when it animates in */
+	margin: 0 0 40px 0;
 }
 
 .top-contents {
@@ -23,32 +24,32 @@ body {
 	width: 400px;
 }
 
-h1 {
+h1, h3 {
 	color: #FC0;
-	font-weight: 500;
-	font-size: 36px;
-	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
+	font-weight: 400;
 	letter-spacing: -0.05em;
-	margin: 0 0 4px 0;
+	font-size: 36px;
+	margin: 0 0 2px 0;
+}
+
+.for {
+	font-size: 24px;
+	margin: 20px 0 0 0;
 }
 
 #input-time {
-	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
 	font-size: 24px;
-	padding: 5px;
+	padding: 10px 8px;
 	border: 1px solid #183543;
 	background-color: #D2D9DD;
 	outline-color: #FC0;
-	height: 40px;
 }
 
 #dd-distance {
-	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
 	font-size: 18px;
 	padding: 5px;
 	border: 1px solid #183543;
 	background-color: #D2D9DD;
-	vertical-align: middle;
 	outline-color: #FC0;
 }
 
@@ -57,47 +58,44 @@ h1 {
 	color: #aaa;
 }
 
-.for {
-	font-size: 24px;
-	color: #FC6;
-	letter-spacing: -1.25px;
-	margin-top: 20px;
-}
-
 input[type=submit] {
-	font-size: 15px;
-	padding: 6px 16px 8px 16px;
-
+	font-size: 18px;
+	font-weight: 700;
+	padding: 5px 16px 6px 16px;
 	background-color: #F09B30;
+	border: none;
 	border-top: 1px solid #F7C78C;
 	color: #183543;
-	text-decoration: none;
-	font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
 }
 
 
 /* RESULTS AREA BELOW */
 .results {
-	margin: 0 auto;
+	display: none;
+	margin: 0px auto;
 	width: 400px;
-	padding: 40px 0 0 0;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	padding: 0 20px 0 0;	
 }
 
 .output-row {
-	display: none;
 	font-size: 18px;
-	margin-bottom: 5px;
 }
 
-.outputDistance {
-	display: inline-block;
-	width: 190px;
+.output-distance {
 	padding-left: 15px;
-	color: #666;
 }
 
-.outputTime {
-	display: inline-block;
+.output-time {
 	text-align: right;
-	width: 80px;
+}
+
+td.output-distance, td.output-miles {
+	color: #666;
 }
