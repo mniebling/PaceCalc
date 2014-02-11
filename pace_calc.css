@@ -59,6 +59,7 @@ h1, h3 {
 }
 
 input[type=submit] {
+	cursor: pointer;
 	font-size: 18px;
 	font-weight: 700;
 	padding: 5px 16px 6px 16px;
@@ -66,6 +67,11 @@ input[type=submit] {
 	border: none;
 	border-top: 1px solid #F7C78C;
 	color: #183543;
+	transition: all 0.5s;
+}
+
+input[type=submit]:hover {
+	background-color: #CC8429;
 }
 
 
